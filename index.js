@@ -1,13 +1,13 @@
 const express = require('express');
 const app = express();
 const http = require('http');
-const server = http.createServer(app);
-const { Server } = require("socket.io");
+const server = http.createServer(app);   //creating the server
+const { Server } = require("socket.io");  //requiring server with socket library
 const io = new Server(server);
 let activeUsers = [];
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/index.html'); //server projects index.html
   const path = require('path');
   app.use(express.static(path.join(__dirname, '/static')));
 });
@@ -16,7 +16,7 @@ io.on('connection', (socket) => {
 
   //to do: emit list of users on connect
   console.log('a user connected');
-  console.log(socket.id);
+  console.log(socket.id); //every user has a socket id 
   io.to(socket.id).emit('ulist connect', activeUsers);
   activeUsers.push({userID: socket.id, bt1:false, bt2:false});
   socket.on('disconnect', () => {
@@ -33,11 +33,11 @@ io.on('connection', (socket) => {
  });
 
  socket.on('forward', () => {
-  io.emit('forward');
+  io.emit('forward'); // changed bu nothing really happened
 });
 
 socket.on('back', () => {
- io.emit('back');
+ io.emit('back');//changed back to forward
 });
 
 socket.on('left', () => {
@@ -57,9 +57,9 @@ socket.on('handshake', () => {
 })
 
 socket.on('namesubmit', (name) => {
-  //console.log(name);
+  console.log(name);
   activeUsers[activeUsers.findIndex(item => item.userID == socket.id)].name = name;
-  //console.log("active users:", activeUsers);
+  console.log("active users:", activeUsers);
   let newUser = activeUsers[activeUsers.findIndex(item => item.userID == socket.id)];
 
 })
@@ -154,7 +154,7 @@ socket.on('r', (rcUID, nCube,characteristic, rbuf, name) => {
 });
 
 
-
+//port of the server 
 let port = process.env.PORT;
 if (port == null || port == "") {
   port = 8000;
