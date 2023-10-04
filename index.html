@@ -3,16 +3,15 @@
 <head>
   <title>Toio Canvas Clicker</title>
 
+  <script src="https://8x8.vc/libs/external_api.min.js"></script>
 
-  <script src='https://8x8.vc/vpaas-magic-cookie-0c52204f3b6845fc860543b291a37230/external_api.js'></script>
-
-  <!-- Webapp settings
+  Webapp settings
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- <link rel="stylesheet" type="text/css" href="style.css"> --> 
 
   <!-- Code prettify -->
   <!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> -->
@@ -25,26 +24,22 @@
         href="https://fonts.googleapis.com/css?family=Mulish">
 
 </head>
+<script>
+    const domain = "8x8.vc";
+    const options = {
+      roomName:
+        "vpaas-magic-cookie-0c52204f3b6845fc860543b291a37230/Telepresence",
+      width: 1100,
+      height: 1100,
+      parentNode: document.querySelector("#meet"),
+      jwt:
+       "https://jwt.io/#debugger-io?token=eyJhbGciOiJSUzI1NiIsImtpZCI6InZwYWFzLW1hZ2ljLWNvb2tpZS0wYzUyMjA0ZjNiNjg0NWZjODYwNTQzYjI5MWEzNzIzMC9jNmJjNTUiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJqaXRzaSIsImNvbnRleHQiOnsidXNlciI6eyJpZCI6IjBmOGI3NzYwLWMxN2YtNGExMi1iMTM0LWM2YWMzNzE2NzE0NCIsIm5hbWUiOiJKUyIsImF2YXRhciI6Imh0dHBzOi8vbGluay50by91c2VyL2F2YXRhci9waWN0dXJlIiwiZW1haWwiOiJqb2huLmRvZUBjb21wYW55LmNvbSIsIm1vZGVyYXRvciI6InRydWUifSwiZmVhdHVyZXMiOnsibGl2ZXN0cmVhbWluZyI6InRydWUiLCJyZWNvcmRpbmciOiJ0cnVlIn19LCJleHAiOjE2OTYyODQwNTIsImlzcyI6ImNoYXQiLCJuYmYiOjE1OTYxOTc2NTIsInJvb20iOiIqIiwic3ViIjoidnBhYXMtbWFnaWMtY29va2llLTFmYzU0MmEzZTQ0MTRhNDRiMjYxMTY2ODE5NWUyYmZlIn0.faHq9UhcvNmPaDTwPuXxdF430CAW_o2SrGAyH19s0cMGagAmFRrimHg0wFY-AJV0Erj0ndsNZz-F_hKjS1CTJL6M9A8jreWQWkYZisFlkHiovO23ulin0o0vCbPkUQqFkGRxkwT-p2r2KoaC4e6rdrvFqr5zGpJw_sF1qUMiU1aXbdS3fq1jGycVq0jCH-27txHBEqVh2oHE-5xnaUhvpSaObFxr5JId09g2uhFqdkM_emSngxcnc6egDPsevDKjReYRx3WaVMr15EdXV4sxjTaFhBWZuN1FOwapyaVxCeDDnxBvfh2TfSSSQgJhULOzaEOxvi1YVhSiVOv-D03zath5HvdLTaZPa-AVh7jJeH33XGeJsgMJmYZ0eY7CUQDuYUBzfTt7jMUCxS9ZCRODh9PTJ-Dbj6VOrU9C_-lctDFeazYFO2b0EIBYBujJBZ6JbEvgIqvin1rIKdvZc0g3eH8pn9qRAKxxsMzWudzTzwlLfl40pts31iMNOQzvWGuaD-osTY7wehpdDDSR-LXoDfNEatk_Ced-ELEGKOgVUzh-gZdP-dKWnwIxQ0sUp-At51cd7cYCahleT8UAsotAcyF8A-3LV0cBsNLCPwD9jnh24hQUsoQsCdM9Kk-0bgE7xBSiyfKzaS8D6ERmrJtL-aYEUkPEQRY73d1qtnBb4Yo&publicKey=-----BEGIN%20PUBLIC%20KEY-----%0AMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA3RqvxhfJH8hVPUyO6Ii5%0AKvbumsO5XITq8fFxgqByvsDdEeJpizAdE0nD0OkLqyMftWRcD55L3kjjYY39GEsV%0Ag1grrdGUk6nplVBD1%2BzoH%2BCOxL5CZ2sOHsdGDCq6TiFJcYVyTgpQKIH95pJrQNZZ%0AJ%2B5AOqHAtkmqQjuwhiPojmQNaS4IgrPG6sGPgu7T%2BINVoTGI4ZBR6nkN%2BbLUgNAc%0ALORy9Ul99lH8EY%2BkYM1b0f0nHpRx08kSWog3qnNqB7XoYWOm%2B2NhflY8fd6mj1AU%0Ay77ZCAP%2BF8pPaCAUktyEtG7GytdpXGl7kwJvbYPXV%2BCZEjA%2FIFCnzggQSY8mBUa2%0ADZVZaGPFFFOcneA5nRFzc%2F59YTMsG17OJR62oA%2FtF%2BZXbqHzZtxSZNUgk4r4J%2BvG%0AjMGO%2F%2BdkrmvJWU5YpzY0GPO8v41INcVa8HZ7vBMiOSj%2BvNn6%2B7zvanyGqlRKB1IG%0AkTxzmvh52j3MJ3NdAtmFr6jS2MOqoio0p0Alw3I4X5POBd%2BPdcmRavbeOJfvdpTe%0AhgG5f6P1ULNhwWh%2FvyOOfSSe%2B9Y5WGKHnbwOIooXVQuVPlW06wUaufr1bqkO0elR%0AD5b%2BQhpEJRV%2BELFgqMHVy3bW3WG%2F3gNfNDQys9X7TfJtWQm7EllxUzXIU%2FqzSqvF%0AsnvrCRj35WShul%2F2h790wjkCAwEAAQ%3D%3D%0A-----END%20PUBLIC%20KEY-----",
+    };
+    const api = new JitsiMeetExternalAPI(domain, options);
+    
+  </script>
 <body oncontextmenu="return false">
 
-  <script type="text/javascript">
-    window.onload = () => {
-      const api = new JitsiMeetExternalAPI("8x8.vc", {
-        roomName: "vpaas-magic-cookie-0c52204f3b6845fc860543b291a37230/New Verz",
-        parentNode: document.querySelector('#jaas-container'),
-        // Make sure to include a JWT if you intend to record,
-        // make outbound calls or use any other premium features!
-        // jwt: "eyJraWQiOiJ2cGFhcy1tYWdpYy1jb29raWUtMGM1MjIwNGYzYjY4NDVmYzg2MDU0M2IyOTFhMzcyMzAvYjYwMmVhLVNBTVBMRV9BUFAiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJqaXRzaSIsImlzcyI6ImNoYXQiLCJpYXQiOjE2OTY0MzMxNTUsImV4cCI6MTY5NjQ0MDM1NSwibmJmIjoxNjk2NDMzMTUwLCJzdWIiOiJ2cGFhcy1tYWdpYy1jb29raWUtMGM1MjIwNGYzYjY4NDVmYzg2MDU0M2IyOTFhMzcyMzAiLCJjb250ZXh0Ijp7ImZlYXR1cmVzIjp7ImxpdmVzdHJlYW1pbmciOmZhbHNlLCJvdXRib3VuZC1jYWxsIjpmYWxzZSwic2lwLW91dGJvdW5kLWNhbGwiOmZhbHNlLCJ0cmFuc2NyaXB0aW9uIjpmYWxzZSwicmVjb3JkaW5nIjpmYWxzZX0sInVzZXIiOnsiaGlkZGVuLWZyb20tcmVjb3JkZXIiOmZhbHNlLCJtb2RlcmF0b3IiOnRydWUsIm5hbWUiOiJUZXN0IFVzZXIiLCJpZCI6ImF1dGgwfDY1MTQ1NzUxOTRkZTNiZDUzZjhiZWI3OSIsImF2YXRhciI6IiIsImVtYWlsIjoidGVzdC51c2VyQGNvbXBhbnkuY29tIn19LCJyb29tIjoiKiJ9.XnNX4CaMKgV7UYAkTQlVaqiFCCNR4M_eBwP2dzIXfYs8WokIEjXs22aFB9el5vSpOug_bzpUrO-MKwlUuJHX2ya0Hxlv5OBwDu6KE3UugDj0OkPioMAaRpALKJlPWwQ_AApzjXkNxii6nSA-hF_zs7ONFllOfsOLqTeKI6ko_wNySOg-CoKU1hzHmXOMCdUuP826rE-LwhzJ4_TzrK9hWt_ASWhCcHZocEqICgyQq6AZD_ZCpJZYIb3xVxsJVoHDDIu-VBLM7IdsWIlw5wh9CzFjFm4YbrYwUnTYDArKZpfQE3EAoK6c9wKJe3Ijmo5cWZyahjUDEu0xRFJTQaYugQ"
-      });
-    }
-  </script>
-
-
-  <!-- <script>
-     api.executeCommand('muteEveryone');
-     api.getParticipantsInfo();
-     const numberOfParticipants = api.getNumberOfParticipants();
-  </script> -->
   <div class="grid">
 
         <div class="col">
