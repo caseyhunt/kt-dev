@@ -4,12 +4,12 @@
   <title>Toio Canvas Clicker</title>
 
 
-  <script src='https://8x8.vc/vpaas-magic-cookie-0c52204f3b6845fc860543b291a37230/external_api.js'></script>
+    <script src='https://meet.jit.si/external_api.js'></script>
 
-  <!-- Webapp settings
+  <!-- Webapp settings -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -18,7 +18,6 @@
   <!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> -->
 
   <!-- P5JS Stuff -->
-  <!-- The graphics for the controls-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 
   <link rel="stylesheet"
@@ -27,24 +26,6 @@
 </head>
 <body oncontextmenu="return false">
 
-  <script type="text/javascript">
-    window.onload = () => {
-      const api = new JitsiMeetExternalAPI("8x8.vc", {
-        roomName: "vpaas-magic-cookie-0c52204f3b6845fc860543b291a37230/New Verz",
-        parentNode: document.querySelector('#jaas-container'),
-        // Make sure to include a JWT if you intend to record,
-        // make outbound calls or use any other premium features!
-        // jwt: "eyJraWQiOiJ2cGFhcy1tYWdpYy1jb29raWUtMGM1MjIwNGYzYjY4NDVmYzg2MDU0M2IyOTFhMzcyMzAvYjYwMmVhLVNBTVBMRV9BUFAiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJqaXRzaSIsImlzcyI6ImNoYXQiLCJpYXQiOjE2OTY0MzMxNTUsImV4cCI6MTY5NjQ0MDM1NSwibmJmIjoxNjk2NDMzMTUwLCJzdWIiOiJ2cGFhcy1tYWdpYy1jb29raWUtMGM1MjIwNGYzYjY4NDVmYzg2MDU0M2IyOTFhMzcyMzAiLCJjb250ZXh0Ijp7ImZlYXR1cmVzIjp7ImxpdmVzdHJlYW1pbmciOmZhbHNlLCJvdXRib3VuZC1jYWxsIjpmYWxzZSwic2lwLW91dGJvdW5kLWNhbGwiOmZhbHNlLCJ0cmFuc2NyaXB0aW9uIjpmYWxzZSwicmVjb3JkaW5nIjpmYWxzZX0sInVzZXIiOnsiaGlkZGVuLWZyb20tcmVjb3JkZXIiOmZhbHNlLCJtb2RlcmF0b3IiOnRydWUsIm5hbWUiOiJUZXN0IFVzZXIiLCJpZCI6ImF1dGgwfDY1MTQ1NzUxOTRkZTNiZDUzZjhiZWI3OSIsImF2YXRhciI6IiIsImVtYWlsIjoidGVzdC51c2VyQGNvbXBhbnkuY29tIn19LCJyb29tIjoiKiJ9.XnNX4CaMKgV7UYAkTQlVaqiFCCNR4M_eBwP2dzIXfYs8WokIEjXs22aFB9el5vSpOug_bzpUrO-MKwlUuJHX2ya0Hxlv5OBwDu6KE3UugDj0OkPioMAaRpALKJlPWwQ_AApzjXkNxii6nSA-hF_zs7ONFllOfsOLqTeKI6ko_wNySOg-CoKU1hzHmXOMCdUuP826rE-LwhzJ4_TzrK9hWt_ASWhCcHZocEqICgyQq6AZD_ZCpJZYIb3xVxsJVoHDDIu-VBLM7IdsWIlw5wh9CzFjFm4YbrYwUnTYDArKZpfQE3EAoK6c9wKJe3Ijmo5cWZyahjUDEu0xRFJTQaYugQ"
-      });
-    }
-  </script>
-
-
-  <!-- <script>
-     api.executeCommand('muteEveryone');
-     api.getParticipantsInfo();
-     const numberOfParticipants = api.getNumberOfParticipants();
-  </script> -->
   <div class="grid">
 
         <div class="col">
