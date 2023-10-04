@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Toio Canvas Clicker</title>
+
+  <script src="https://8x8.vc/libs/external_api.min.js"></script>
+
+  Webapp settings
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Stylesheet -->
+  <!-- <link rel="stylesheet" type="text/css" href="style.css"> --> 
+
+  <!-- Code prettify -->
+  <!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> -->
+
+  <!-- P5JS Stuff -->
+  <!-- The graphics for the controls-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Mulish">
+
+</head>
+<script>
+    const domain = "8x8.vc";
+    const options = {
+      roomName:
+        "vpaas-magic-cookie-0c52204f3b6845fc860543b291a37230/Telepresence",
+      width: 1100,
+      height: 1100,
+      parentNode: document.querySelector("#meet"),
+      jwt:
+       "https://jwt.io/#debugger-io?token=eyJhbGciOiJSUzI1NiIsImtpZCI6InZwYWFzLW1hZ2ljLWNvb2tpZS0wYzUyMjA0ZjNiNjg0NWZjODYwNTQzYjI5MWEzNzIzMC9jNmJjNTUiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJqaXRzaSIsImNvbnRleHQiOnsidXNlciI6eyJpZCI6IjBmOGI3NzYwLWMxN2YtNGExMi1iMTM0LWM2YWMzNzE2NzE0NCIsIm5hbWUiOiJKUyIsImF2YXRhciI6Imh0dHBzOi8vbGluay50by91c2VyL2F2YXRhci9waWN0dXJlIiwiZW1haWwiOiJqb2huLmRvZUBjb21wYW55LmNvbSIsIm1vZGVyYXRvciI6InRydWUifSwiZmVhdHVyZXMiOnsibGl2ZXN0cmVhbWluZyI6InRydWUiLCJyZWNvcmRpbmciOiJ0cnVlIn19LCJleHAiOjE2OTYyODQwNTIsImlzcyI6ImNoYXQiLCJuYmYiOjE1OTYxOTc2NTIsInJvb20iOiIqIiwic3ViIjoidnBhYXMtbWFnaWMtY29va2llLTFmYzU0MmEzZTQ0MTRhNDRiMjYxMTY2ODE5NWUyYmZlIn0.faHq9UhcvNmPaDTwPuXxdF430CAW_o2SrGAyH19s0cMGagAmFRrimHg0wFY-AJV0Erj0ndsNZz-F_hKjS1CTJL6M9A8jreWQWkYZisFlkHiovO23ulin0o0vCbPkUQqFkGRxkwT-p2r2KoaC4e6rdrvFqr5zGpJw_sF1qUMiU1aXbdS3fq1jGycVq0jCH-27txHBEqVh2oHE-5xnaUhvpSaObFxr5JId09g2uhFqdkM_emSngxcnc6egDPsevDKjReYRx3WaVMr15EdXV4sxjTaFhBWZuN1FOwapyaVxCeDDnxBvfh2TfSSSQgJhULOzaEOxvi1YVhSiVOv-D03zath5HvdLTaZPa-AVh7jJeH33XGeJsgMJmYZ0eY7CUQDuYUBzfTt7jMUCxS9ZCRODh9PTJ-Dbj6VOrU9C_-lctDFeazYFO2b0EIBYBujJBZ6JbEvgIqvin1rIKdvZc0g3eH8pn9qRAKxxsMzWudzTzwlLfl40pts31iMNOQzvWGuaD-osTY7wehpdDDSR-LXoDfNEatk_Ced-ELEGKOgVUzh-gZdP-dKWnwIxQ0sUp-At51cd7cYCahleT8UAsotAcyF8A-3LV0cBsNLCPwD9jnh24hQUsoQsCdM9Kk-0bgE7xBSiyfKzaS8D6ERmrJtL-aYEUkPEQRY73d1qtnBb4Yo&publicKey=-----BEGIN%20PUBLIC%20KEY-----%0AMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA3RqvxhfJH8hVPUyO6Ii5%0AKvbumsO5XITq8fFxgqByvsDdEeJpizAdE0nD0OkLqyMftWRcD55L3kjjYY39GEsV%0Ag1grrdGUk6nplVBD1%2BzoH%2BCOxL5CZ2sOHsdGDCq6TiFJcYVyTgpQKIH95pJrQNZZ%0AJ%2B5AOqHAtkmqQjuwhiPojmQNaS4IgrPG6sGPgu7T%2BINVoTGI4ZBR6nkN%2BbLUgNAc%0ALORy9Ul99lH8EY%2BkYM1b0f0nHpRx08kSWog3qnNqB7XoYWOm%2B2NhflY8fd6mj1AU%0Ay77ZCAP%2BF8pPaCAUktyEtG7GytdpXGl7kwJvbYPXV%2BCZEjA%2FIFCnzggQSY8mBUa2%0ADZVZaGPFFFOcneA5nRFzc%2F59YTMsG17OJR62oA%2FtF%2BZXbqHzZtxSZNUgk4r4J%2BvG%0AjMGO%2F%2BdkrmvJWU5YpzY0GPO8v41INcVa8HZ7vBMiOSj%2BvNn6%2B7zvanyGqlRKB1IG%0AkTxzmvh52j3MJ3NdAtmFr6jS2MOqoio0p0Alw3I4X5POBd%2BPdcmRavbeOJfvdpTe%0AhgG5f6P1ULNhwWh%2FvyOOfSSe%2B9Y5WGKHnbwOIooXVQuVPlW06wUaufr1bqkO0elR%0AD5b%2BQhpEJRV%2BELFgqMHVy3bW3WG%2F3gNfNDQys9X7TfJtWQm7EllxUzXIU%2FqzSqvF%0AsnvrCRj35WShul%2F2h790wjkCAwEAAQ%3D%3D%0A-----END%20PUBLIC%20KEY-----",
+    };
+    const api = new JitsiMeetExternalAPI(domain, options);
+    
+  </script>
+<body oncontextmenu="return false">
+
+  <div class="grid">
+
+        <div class="col">
+          <div id="meet"></div>
+        </div>
+        <div class="col" id="video_fullscreen">
+          
+          <h2 id="expand">Expand to Full Screen</h1>
+            <h1 id="arrow">&#129171;</h1>
+        </div>
+
+    <div class="col controls flex" style="visibility: hidden">
+
+      <div class="flex flexcontr" id="cube1_controls">
+
+        <div id="dial">
+        </div>
+        <div>
+          <div class="connect_buttons">
+
+      <img src="images/Group 29.svg" height ="53.44" width="46.8" id="btConnectCube1">
+      <img src="images/Group 28.svg" height ="53.44" width="46.8" id="RemoteConnected1">
+    </div>
+      <div class="buttons" id="event1">
+        <button class="spin"  id="spin1"><img src="images/SPIN.png" ></button>
+        <button class="party" id="party1"><img src="images/PARTY.png" ></button>
+        <button class="shuffle" id="shuffle1"><img src="images/SHUFFLE.png"></button>
+      </div>
+
+
+      <div class="sliders">
+        <div id="spd">
+      <h3 class="labl">Speed</h3>
+    <input type="range"  min="25" max="120" value="20" class='slider' id="slider1">
+    </div>
+    </div>
+  </div>
+
+
+    </div>
+
+    <div class="flex flexcontr">
+      <div id="canvas" class="cclicker" style="">
+      </div>
+    </div>
+    <div class="flex flexcontr" id="cube2_controls">
+
+
+
+      <div>
+      <div class="connect_buttons">
+      <img src="images/Group 29.svg" height ="53.44" width="46.8" id="btConnectCube2">
+      <img src="images/Group 28.svg" height ="53.44" width="46.8" id="RemoteConnected2">
+    </div>
+      <div id="canvas1" class="cclicker" style="display:none">
+      </div>
+
+      <div class="buttons" id="event2">
+        <button class="spin"  id="spin2"><img src="images/SPIN.png"></button>
+        <button class="party" id="party2"><img src="images/PARTY.png"></button>
+        <button class="shuffle" id="shuffle2"><img src="images/SHUFFLE.png"></button>
+      </div>
+
+
+      <div class="sliders">
+        <div id="spd2">
+      <h3 class="labl">Speed</h3>
+    <input type="range"  min="25" max="120" value="20" class='slider' id="slider2">
+    </div>
+    </div>
+
+      </div>
+
+
+    <div id="dial1">
+    </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+<div id="modalbgrc" class="modalbg">
+  <div id="remote-connect" class="remote-connect">
+    <h1 id="close">X</h1>
+    <h1 class="head">Connect to a Remote Toio!</h1>
+
+    <form id="cube1" onsubmit="return false;">
+  <div id="uconnect">
+    <h3 id="connected"></h3>
+      <select name="user" id="user">
+      </select>
+      <button  id="connect">Connect</button>
+  </div>
+  </form>
+</div>
+</div>
+
+<div id="modalbgcc" class="modalbg">
+  <div class="toio-connection">
+    <h1 id="close">X</h1>
+    <h1 class="head">Manage your connected robot:</h1>
+    <button id="disconnect">Disconnect Robot</button>
+    <button id="cancel">Cancel</button>
+  </div>
+</div>
+
+
+
+
+        <!-- <form onsubmit="return false;">
+          <input type="text" id="name">
+        <br/>
+          <button class="mui-btn mui-btn--small mui-btn--primary mui-btn--raised" id="namesubmit" >Submit</button>
+        </form> -->
+
+        <div id="notifications"></div>
+
+  <div id="hide">
+  <H1 style="display:none">Welcome to Toio Canvas Clicker</h1>
+  <h2 style="display:none">Click the Canvas to select a location for the Toio</h2>
+  <div id="cube-connect" class="inactive">
+          <div id="operation" class="operation">
+            <h2 id="connecttocube">Connect to Toio Core Cube</h2>
+            <div class="operationContent">
+              <button class="mui-btn mui-btn--small mui-btn--primary mui-btn--raised" id="btConnectCube1">Connect Cube 1</button>
+              <button class="mui-btn mui-btn--small mui-btn--primary mui-btn--raised" disabled id="btConnectCube2" style = "visibility:hidden">Connect Cube 2</button>
+              <button class="mui-btn mui-btn--small mui-btn--primary mui-btn--raised" disabled id="btConnectCube3" style="visibility:hidden">Connect Cube 3</button>
+          </div>
+          <div class="footer">
+            <button id="next">Continue</button>
+          </div>
+        </div>
+  </div>
+  <div class="position">
+    <button class="mui-btn mui-btn--small mui-btn--primary mui-btn--raised" id="getPos" style="display:none">Get Position</button>
+    <h3 id="xpos" style="display:none">x position: </h3>
+    <h3 id="ypos" style = "display:none">y position: </h3>
+    <h3 id="angle" style="display:none">angle (degrees): </h3>
+  </div>
+
+  <!-- <div class="connected_user">
+    <h5>Remote Connected Users:</h5>
+  </div> -->
+  <div id="cube-control" class="inactive">
+      <form id="cube1" onsubmit="return false;">
+        <div id="switch">
+      <label class="switch">
+      <input type="checkbox" id='toggle' >
+      <span class="sslider"></span>
+      </label>
+      </form>
+    </div>
+    <div id="modalbgrc" class="modalbg">
+    <div id="uconnect">
+      <i class="fa-solid fa-x"></i>
+      <h3 id="connected1"></h3>
+        <select name="user" id="user">
+        </select>
+        <button  id="connect">Connect</button>
+    </div>
+  </div>
+
+
+<div id="slider">
+
+  <div class="sliders">
+    <div id="spd">
+  <h3 class="labl">Speed</h3>
+<input type="range"  min="25" max="120" value="50" class='slider' id="slider1">
+</div>
+<div id="canvas" class="cclicker">
+</div>
+</div>
+<!-- <div class="sliders">
+  <h3 class="labl">Angle</h3>
+<input type="range"  min="0" max="360" value="90" class='slider' id="slider2">
+</div> -->
+
+<div id="dial">
+</div>
+
+
+
+
+
+
+
+  </div>
+  </div>
+
+</div>
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="gamepad.js"></script>
+      <script src="client.js"></script>
+      <!--switch the next line to get a horizontal dial arrangement-->
+      <script type="text/javascript" src="joystick_only.js"></script>
+      <!-- <script type="text/javascript" src="dial-vertical.js"></script> -->
+    <!-- <script type="text/javascript" src="index.js"></script> -->
+</body>
