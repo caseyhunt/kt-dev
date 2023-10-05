@@ -3,7 +3,7 @@
 <head>
   <title>Toio Canvas Clicker</title>
 
-  <script src='https://8x8.vc/external_api.js'></script>
+  <script src='https://8x8.vc/libs/external_api.min.js'></script>
 
   <!-- Webapp settings -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -24,7 +24,9 @@
         href="https://fonts.googleapis.com/css?family=Mulish">
 
 </head>
-<script>
+<body oncontextmenu="return false">
+
+  <script>
     const domain = "8x8.vc";
     const options = {
       roomName:
@@ -33,16 +35,10 @@
       height: 1100,
       parentNode: document.querySelector("#meet"),
       jwt:
-       "https://jwt.io/#debugger-io?token=eyJhbGciOiJSUzI1NiIsImtpZCI6InZwYWFzLW1hZ2ljLWNvb2tpZS0wYzUyMjA0ZjNiNjg0NWZjODYwNTQzYjI5MWEzNzIzMC80MzkzZTAiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJqaXRzaSIsImNvbnRleHQiOnsidXNlciI6eyJpZCI6IjBmOGI3NzYwLWMxN2YtNGExMi1iMTM0LWM2YWMzNzE2NzE0NCIsIm5hbWUiOiJDYXNleSIsImF2YXRhciI6Imh0dHBzOi8vbGluay50by91c2VyL2F2YXRhci9waWN0dXJlIiwiZW1haWwiOiJjYXNleS5odW50QGNvbG9yYWRvLmVkdSIsIm1vZGVyYXRvciI6InRydWUifSwiZmVhdHVyZXMiOnsibGl2ZXN0cmVhbWluZyI6InRydWUiLCJyZWNvcmRpbmciOiJ0cnVlIn19LCJleHAiOjE2OTYyODQwNTIsImlzcyI6ImNoYXQiLCJuYmYiOjE1OTYxOTc2NTIsInJvb20iOiIqIiwic3ViIjoidnBhYXMtbWFnaWMtY29va2llLTBjNTIyMDRmM2I2ODQ1ZmM4NjA1NDNiMjkxYTM3MjMwLzQzOTNlMCJ9.mJ_CO07NoPRnS7ew0mAezwwGzmWE_p8oTGvYAz7kSUci-kGsXnIQJmAvwWhPtTnRvLu_HXGeuA1JtTWimMWPpkEI6plczhPenqWWsXTrnjv31mG3-HtdIRgMz0D3dzsUUmGtJWPJdjvPgIH1cHDqIJx5l9obPRjQdCChyfmKNf6KA6fuu52FaBre7gLuE2j7F_jiarwCLlJpQcMKlBi_A1lKgoFrxTradBR4vyQn4uHllDInDdfpnBKQAzVTDgO-cCT_CMje20b0itgf254VWKoXqPdo9edkXZCsv1OvDK2z6b7685Dfqq0ff3WWeADhL7plP0sr4CWpFFOZc5C9hQYOp7fAPuPogo7M4RTzPPBBWmiAQEZzX8nZzH9qbrBXGnr1RiYqiRlTpqxq1pYyD8_45qc26gBXW-5IqZjoPuTrSsZFZsELbtM39vlfjo9x1x1TtZBU_1Q7nn1rIWapp-VIhwql1xzCmm53Yyvq4THQsQ9hLxLd_KldN8CzO3_hjTCvMiBWi3E79aRRe6DPwAWTeRxjrH4Bbor3iGOsAZee46bd981Up3XtXd_xwr0_xUC1B8Rbe0pRusUK5uhD2WJvkTUN9ym1x3OPajhcqgX8eEFwXZzhv_WzUQx9h0q8inE488L-3ujH4cvHPkbQ3_Sj0yW1HgzcsRJzKuPx2LI&publicKey=-----BEGIN%20PUBLIC%20KEY-----%0AMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzYSuSHgc3cjWiaynVwsi%0AsgpZ1m1aDAWssFnK4kqp%2FCBXAS%2BZJRA%2BybHSMMvn9mhZ8dbTgmAHHTBpn6kaRlSB%0ASxtcunzk8NGqyVo6QIMAma16RJ42FJiTSeHzj1U59diemTEEVkCtaDG1xhkjziPo%0A%2BR7bsxOWxHpkkyOZV4ya9T4b2HCTtocy%2FRgvnrkS4KqRKC4SxEjXgSjDT9UnvfHk%0AGumvxTR0RjBtJWKNRC5tp8U%2FxYjJjtAlP2EEGK56mSUQ54jAKv4qddtviludZhDl%0AGvCzEvYiC2C4tsHzkKWhNKGMheT1f4LNajQ6SC2eeDVKf1gLppvyu9rMaI37sra0%0AntxtAg%2BJVFjNi3aGK8Jmpt6oLidhia6QPXZNnI5FcjHlhQHcGq64igI3pKyn5GUt%0AQ7DFGNOVO%2FdgVzOujCTGjQ0bjuIQpia%2FWeq41U4oH6BQ%2B%2B0fNRhrwPdYJ8PfGVXr%0AhHpspaK3TpqfikIaXyCYKiBXVfIB19EoJklGTehhBzty6f4WIn4lgZMbOqBXZH9N%0AFKlmDJszKTUgfsZ6uYiIYLZ%2BpLlOBrr3Lr5QedBu%2FuYtCmDs7%2BP1Ypi5f0WIwVYk%0A4d0Ckc0B%2FuoWMxMOn22R1H8pVWz8g0cq5VJ5qD0ecWf9ZbsIgIWEzRrDA9XP1ZaD%0AzOS3SpmIzk3ZQhhIOztom7ECAwEAAQ%3D%3D%0A-----END%20PUBLIC%20KEY-----%0A",
+       "eyJhbGciOiJSUzI1NiIsImtpZCI6InZwYWFzLW1hZ2ljLWNvb2tpZS0wYzUyMjA0ZjNiNjg0NWZjODYwNTQzYjI5MWEzNzIzMC80MzkzZTAiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJqaXRzaSIsImNvbnRleHQiOnsidXNlciI6eyJpZCI6IjBmOGI3NzYwLWMxN2YtNGExMi1iMTM0LWM2YWMzNzE2NzE0NCIsIm5hbWUiOiJDYXNleSIsImF2YXRhciI6Imh0dHBzOi8vbGluay50by91c2VyL2F2YXRhci9waWN0dXJlIiwiZW1haWwiOiJjYXNleS5odW50QGNvbG9yYWRvLmVkdSIsIm1vZGVyYXRvciI6InRydWUifSwiZmVhdHVyZXMiOnsibGl2ZXN0cmVhbWluZyI6InRydWUiLCJyZWNvcmRpbmciOiJ0cnVlIn19LCJleHAiOjE2OTYyODQwNTIsImlzcyI6ImNoYXQiLCJuYmYiOjE1OTYxOTc2NTIsInJvb20iOiIqIiwic3ViIjoidnBhYXMtbWFnaWMtY29va2llLTBjNTIyMDRmM2I2ODQ1ZmM4NjA1NDNiMjkxYTM3MjMwLzQzOTNlMCJ9.mJ_CO07NoPRnS7ew0mAezwwGzmWE_p8oTGvYAz7kSUci-kGsXnIQJmAvwWhPtTnRvLu_HXGeuA1JtTWimMWPpkEI6plczhPenqWWsXTrnjv31mG3-HtdIRgMz0D3dzsUUmGtJWPJdjvPgIH1cHDqIJx5l9obPRjQdCChyfmKNf6KA6fuu52FaBre7gLuE2j7F_jiarwCLlJpQcMKlBi_A1lKgoFrxTradBR4vyQn4uHllDInDdfpnBKQAzVTDgO-cCT_CMje20b0itgf254VWKoXqPdo9edkXZCsv1OvDK2z6b7685Dfqq0ff3WWeADhL7plP0sr4CWpFFOZc5C9hQYOp7fAPuPogo7M4RTzPPBBWmiAQEZzX8nZzH9qbrBXGnr1RiYqiRlTpqxq1pYyD8_45qc26gBXW-5IqZjoPuTrSsZFZsELbtM39vlfjo9x1x1TtZBU_1Q7nn1rIWapp-VIhwql1xzCmm53Yyvq4THQsQ9hLxLd_KldN8CzO3_hjTCvMiBWi3E79aRRe6DPwAWTeRxjrH4Bbor3iGOsAZee46bd981Up3XtXd_xwr0_xUC1B8Rbe0pRusUK5uhD2WJvkTUN9ym1x3OPajhcqgX8eEFwXZzhv_WzUQx9h0q8inE488L-3ujH4cvHPkbQ3_Sj0yW1HgzcsRJzKuPx2LI",
     };
     const api = new JitsiMeetExternalAPI(domain, options);
-
-    window.onload = () => {
-    initIframeAPI();
-  }
-    
   </script>
-<body oncontextmenu="return false">
 
   <div class="grid">
 
@@ -51,7 +47,7 @@
         </div>
         <div class="col" id="video_fullscreen">
           
-          <h2 id="expand">Expand to Full Screen</h1>
+          <h2 id="expand">Expand tx Full Screen</h1>
             <h1 id="arrow">&#129171;</h1>
         </div>
 
