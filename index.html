@@ -3,9 +3,9 @@
 <head>
   <title>Toio Canvas Clicker</title>
 
-  <script src="https://8x8.vc/libs/external_api.min.js"></script>
+  <script src='https://8x8.vc/external_api.js'></script>
 
-  Webapp settings
+  <!-- Webapp settings -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,14 +28,18 @@
     const domain = "8x8.vc";
     const options = {
       roomName:
-        "vpaas-magic-cookie-0c52204f3b6845fc860543b291a37230/Telepresence",
+        "vpaas-magic-cookie-0c52204f3b6845fc860543b291a37230/4393e0/Telepresence",
       width: 1100,
       height: 1100,
       parentNode: document.querySelector("#meet"),
       jwt:
-       "https://jwt.io/#debugger-io?token=eyJhbGciOiJSUzI1NiIsImtpZCI6InZwYWFzLW1hZ2ljLWNvb2tpZS0wYzUyMjA0ZjNiNjg0NWZjODYwNTQzYjI5MWEzNzIzMC9jNmJjNTUiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJqaXRzaSIsImNvbnRleHQiOnsidXNlciI6eyJpZCI6IjBmOGI3NzYwLWMxN2YtNGExMi1iMTM0LWM2YWMzNzE2NzE0NCIsIm5hbWUiOiJKUyIsImF2YXRhciI6Imh0dHBzOi8vbGluay50by91c2VyL2F2YXRhci9waWN0dXJlIiwiZW1haWwiOiJqb2huLmRvZUBjb21wYW55LmNvbSIsIm1vZGVyYXRvciI6InRydWUifSwiZmVhdHVyZXMiOnsibGl2ZXN0cmVhbWluZyI6InRydWUiLCJyZWNvcmRpbmciOiJ0cnVlIn19LCJleHAiOjE2OTYyODQwNTIsImlzcyI6ImNoYXQiLCJuYmYiOjE1OTYxOTc2NTIsInJvb20iOiIqIiwic3ViIjoidnBhYXMtbWFnaWMtY29va2llLTFmYzU0MmEzZTQ0MTRhNDRiMjYxMTY2ODE5NWUyYmZlIn0.faHq9UhcvNmPaDTwPuXxdF430CAW_o2SrGAyH19s0cMGagAmFRrimHg0wFY-AJV0Erj0ndsNZz-F_hKjS1CTJL6M9A8jreWQWkYZisFlkHiovO23ulin0o0vCbPkUQqFkGRxkwT-p2r2KoaC4e6rdrvFqr5zGpJw_sF1qUMiU1aXbdS3fq1jGycVq0jCH-27txHBEqVh2oHE-5xnaUhvpSaObFxr5JId09g2uhFqdkM_emSngxcnc6egDPsevDKjReYRx3WaVMr15EdXV4sxjTaFhBWZuN1FOwapyaVxCeDDnxBvfh2TfSSSQgJhULOzaEOxvi1YVhSiVOv-D03zath5HvdLTaZPa-AVh7jJeH33XGeJsgMJmYZ0eY7CUQDuYUBzfTt7jMUCxS9ZCRODh9PTJ-Dbj6VOrU9C_-lctDFeazYFO2b0EIBYBujJBZ6JbEvgIqvin1rIKdvZc0g3eH8pn9qRAKxxsMzWudzTzwlLfl40pts31iMNOQzvWGuaD-osTY7wehpdDDSR-LXoDfNEatk_Ced-ELEGKOgVUzh-gZdP-dKWnwIxQ0sUp-At51cd7cYCahleT8UAsotAcyF8A-3LV0cBsNLCPwD9jnh24hQUsoQsCdM9Kk-0bgE7xBSiyfKzaS8D6ERmrJtL-aYEUkPEQRY73d1qtnBb4Yo&publicKey=-----BEGIN%20PUBLIC%20KEY-----%0AMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA3RqvxhfJH8hVPUyO6Ii5%0AKvbumsO5XITq8fFxgqByvsDdEeJpizAdE0nD0OkLqyMftWRcD55L3kjjYY39GEsV%0Ag1grrdGUk6nplVBD1%2BzoH%2BCOxL5CZ2sOHsdGDCq6TiFJcYVyTgpQKIH95pJrQNZZ%0AJ%2B5AOqHAtkmqQjuwhiPojmQNaS4IgrPG6sGPgu7T%2BINVoTGI4ZBR6nkN%2BbLUgNAc%0ALORy9Ul99lH8EY%2BkYM1b0f0nHpRx08kSWog3qnNqB7XoYWOm%2B2NhflY8fd6mj1AU%0Ay77ZCAP%2BF8pPaCAUktyEtG7GytdpXGl7kwJvbYPXV%2BCZEjA%2FIFCnzggQSY8mBUa2%0ADZVZaGPFFFOcneA5nRFzc%2F59YTMsG17OJR62oA%2FtF%2BZXbqHzZtxSZNUgk4r4J%2BvG%0AjMGO%2F%2BdkrmvJWU5YpzY0GPO8v41INcVa8HZ7vBMiOSj%2BvNn6%2B7zvanyGqlRKB1IG%0AkTxzmvh52j3MJ3NdAtmFr6jS2MOqoio0p0Alw3I4X5POBd%2BPdcmRavbeOJfvdpTe%0AhgG5f6P1ULNhwWh%2FvyOOfSSe%2B9Y5WGKHnbwOIooXVQuVPlW06wUaufr1bqkO0elR%0AD5b%2BQhpEJRV%2BELFgqMHVy3bW3WG%2F3gNfNDQys9X7TfJtWQm7EllxUzXIU%2FqzSqvF%0AsnvrCRj35WShul%2F2h790wjkCAwEAAQ%3D%3D%0A-----END%20PUBLIC%20KEY-----",
+       "https://jwt.io/#debugger-io?token=eyJhbGciOiJSUzI1NiIsImtpZCI6InZwYWFzLW1hZ2ljLWNvb2tpZS0wYzUyMjA0ZjNiNjg0NWZjODYwNTQzYjI5MWEzNzIzMC80MzkzZTAiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJqaXRzaSIsImNvbnRleHQiOnsidXNlciI6eyJpZCI6IjBmOGI3NzYwLWMxN2YtNGExMi1iMTM0LWM2YWMzNzE2NzE0NCIsIm5hbWUiOiJDYXNleSIsImF2YXRhciI6Imh0dHBzOi8vbGluay50by91c2VyL2F2YXRhci9waWN0dXJlIiwiZW1haWwiOiJjYXNleS5odW50QGNvbG9yYWRvLmVkdSIsIm1vZGVyYXRvciI6InRydWUifSwiZmVhdHVyZXMiOnsibGl2ZXN0cmVhbWluZyI6InRydWUiLCJyZWNvcmRpbmciOiJ0cnVlIn19LCJleHAiOjE2OTYyODQwNTIsImlzcyI6ImNoYXQiLCJuYmYiOjE1OTYxOTc2NTIsInJvb20iOiIqIiwic3ViIjoidnBhYXMtbWFnaWMtY29va2llLTBjNTIyMDRmM2I2ODQ1ZmM4NjA1NDNiMjkxYTM3MjMwLzQzOTNlMCJ9.mJ_CO07NoPRnS7ew0mAezwwGzmWE_p8oTGvYAz7kSUci-kGsXnIQJmAvwWhPtTnRvLu_HXGeuA1JtTWimMWPpkEI6plczhPenqWWsXTrnjv31mG3-HtdIRgMz0D3dzsUUmGtJWPJdjvPgIH1cHDqIJx5l9obPRjQdCChyfmKNf6KA6fuu52FaBre7gLuE2j7F_jiarwCLlJpQcMKlBi_A1lKgoFrxTradBR4vyQn4uHllDInDdfpnBKQAzVTDgO-cCT_CMje20b0itgf254VWKoXqPdo9edkXZCsv1OvDK2z6b7685Dfqq0ff3WWeADhL7plP0sr4CWpFFOZc5C9hQYOp7fAPuPogo7M4RTzPPBBWmiAQEZzX8nZzH9qbrBXGnr1RiYqiRlTpqxq1pYyD8_45qc26gBXW-5IqZjoPuTrSsZFZsELbtM39vlfjo9x1x1TtZBU_1Q7nn1rIWapp-VIhwql1xzCmm53Yyvq4THQsQ9hLxLd_KldN8CzO3_hjTCvMiBWi3E79aRRe6DPwAWTeRxjrH4Bbor3iGOsAZee46bd981Up3XtXd_xwr0_xUC1B8Rbe0pRusUK5uhD2WJvkTUN9ym1x3OPajhcqgX8eEFwXZzhv_WzUQx9h0q8inE488L-3ujH4cvHPkbQ3_Sj0yW1HgzcsRJzKuPx2LI&publicKey=-----BEGIN%20PUBLIC%20KEY-----%0AMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzYSuSHgc3cjWiaynVwsi%0AsgpZ1m1aDAWssFnK4kqp%2FCBXAS%2BZJRA%2BybHSMMvn9mhZ8dbTgmAHHTBpn6kaRlSB%0ASxtcunzk8NGqyVo6QIMAma16RJ42FJiTSeHzj1U59diemTEEVkCtaDG1xhkjziPo%0A%2BR7bsxOWxHpkkyOZV4ya9T4b2HCTtocy%2FRgvnrkS4KqRKC4SxEjXgSjDT9UnvfHk%0AGumvxTR0RjBtJWKNRC5tp8U%2FxYjJjtAlP2EEGK56mSUQ54jAKv4qddtviludZhDl%0AGvCzEvYiC2C4tsHzkKWhNKGMheT1f4LNajQ6SC2eeDVKf1gLppvyu9rMaI37sra0%0AntxtAg%2BJVFjNi3aGK8Jmpt6oLidhia6QPXZNnI5FcjHlhQHcGq64igI3pKyn5GUt%0AQ7DFGNOVO%2FdgVzOujCTGjQ0bjuIQpia%2FWeq41U4oH6BQ%2B%2B0fNRhrwPdYJ8PfGVXr%0AhHpspaK3TpqfikIaXyCYKiBXVfIB19EoJklGTehhBzty6f4WIn4lgZMbOqBXZH9N%0AFKlmDJszKTUgfsZ6uYiIYLZ%2BpLlOBrr3Lr5QedBu%2FuYtCmDs7%2BP1Ypi5f0WIwVYk%0A4d0Ckc0B%2FuoWMxMOn22R1H8pVWz8g0cq5VJ5qD0ecWf9ZbsIgIWEzRrDA9XP1ZaD%0AzOS3SpmIzk3ZQhhIOztom7ECAwEAAQ%3D%3D%0A-----END%20PUBLIC%20KEY-----%0A",
     };
     const api = new JitsiMeetExternalAPI(domain, options);
+
+    window.onload = () => {
+    initIframeAPI();
+  }
     
   </script>
 <body oncontextmenu="return false">
