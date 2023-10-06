@@ -3,21 +3,9 @@
 <head>
   <title>Toio Canvas Clicker</title>
 
-  <!-- <script src='https://vpaas-magic-cookie-0c52204f3b6845fc860543b291a37230/4393e0/external_api.js'async></script>
+  <script src='https://8x8.vc/external_api.js'></script>
 
-  <script type="text/javascript">
-    window.onload = () => {
-      const api = new JitsiMeetExternalAPI("8x8.vc", {
-        roomName: "vpaas-magic-cookie-0c52204f3b6845fc860543b291a37230/4393e0/Telepresence",
-        parentNode: document.querySelector('#jaas-container'),
-                      // Make sure to include a JWT if you intend to record,
-                      // make outbound calls or use any other premium features!
-                      jwt:"eyJhbGciOiJSUzI1NiIsImtpZCI6InZwYWFzLW1hZ2ljLWNvb2tpZS0wYzUyMjA0ZjNiNjg0NWZjODYwNTQzYjI5MWEzNzIzMC80MzkzZTAiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJqaXRzaSIsImNvbnRleHQiOnsidXNlciI6eyJpZCI6IjBmOGI3NzYwLWMxN2YtNGExMi1iMTM0LWM2YWMzNzE2NzE0NCIsIm5hbWUiOiJDYXNleSIsImF2YXRhciI6Imh0dHBzOi8vbGluay50by91c2VyL2F2YXRhci9waWN0dXJlIiwiZW1haWwiOiJjYXNleS5odW50QGNvbG9yYWRvLmVkdSIsIm1vZGVyYXRvciI6InRydWUifSwiZmVhdHVyZXMiOnsibGl2ZXN0cmVhbWluZyI6InRydWUiLCJyZWNvcmRpbmciOiJ0cnVlIn19LCJleHAiOjE2OTYyODQwNTIsImlzcyI6ImNoYXQiLCJuYmYiOjE1OTYxOTc2NTIsInJvb20iOiIqIiwic3ViIjoidnBhYXMtbWFnaWMtY29va2llLTBjNTIyMDRmM2I2ODQ1ZmM4NjA1NDNiMjkxYTM3MjMwLzQzOTNlMCJ9.mJ_CO07NoPRnS7ew0mAezwwGzmWE_p8oTGvYAz7kSUci-kGsXnIQJmAvwWhPtTnRvLu_HXGeuA1JtTWimMWPpkEI6plczhPenqWWsXTrnjv31mG3-HtdIRgMz0D3dzsUUmGtJWPJdjvPgIH1cHDqIJx5l9obPRjQdCChyfmKNf6KA6fuu52FaBre7gLuE2j7F_jiarwCLlJpQcMKlBi_A1lKgoFrxTradBR4vyQn4uHllDInDdfpnBKQAzVTDgO-cCT_CMje20b0itgf254VWKoXqPdo9edkXZCsv1OvDK2z6b7685Dfqq0ff3WWeADhL7plP0sr4CWpFFOZc5C9hQYOp7fAPuPogo7M4RTzPPBBWmiAQEZzX8nZzH9qbrBXGnr1RiYqiRlTpqxq1pYyD8_45qc26gBXW-5IqZjoPuTrSsZFZsELbtM39vlfjo9x1x1TtZBU_1Q7nn1rIWapp-VIhwql1xzCmm53Yyvq4THQsQ9hLxLd_KldN8CzO3_hjTCvMiBWi3E79aRRe6DPwAWTeRxjrH4Bbor3iGOsAZee46bd981Up3XtXd_xwr0_xUC1B8Rbe0pRusUK5uhD2WJvkTUN9ym1x3OPajhcqgX8eEFwXZzhv_WzUQx9h0q8inE488L-3ujH4cvHPkbQ3_Sj0yW1HgzcsRJzKuPx2LI"
-      });
-    }
-  </script> -->
-
-  <script src='https://8x8.vc/vpaas-magic-cookie-0c52204f3b6845fc860543b291a37230/external_api.js' async></script>
+  <!-- <script src='https://8x8.vc/vpaas-magic-cookie-0c52204f3b6845fc860543b291a37230/external_api.js' async></script>
         <style>html, body, #jaas-container { height: 300%; }</style>
         <script type="text/javascript">
           window.onload = () => {
@@ -29,7 +17,28 @@
 							 jwt: "eyJhbGciOiJSUzI1NiIsImtpZCI6InZwYWFzLW1hZ2ljLWNvb2tpZS0wYzUyMjA0ZjNiNjg0NWZjODYwNTQzYjI5MWEzNzIzMC80MzkzZTAiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJqaXRzaSIsImNvbnRleHQiOnsidXNlciI6eyJpZCI6IjBmOGI3NzYwLWMxN2YtNGExMi1iMTM0LWM2YWMzNzE2NzE0NCIsIm5hbWUiOiJDYXNleSIsImF2YXRhciI6Imh0dHBzOi8vbGluay50by91c2VyL2F2YXRhci9waWN0dXJlIiwiZW1haWwiOiJjYXNleS5odW50QGNvbG9yYWRvLmVkdSIsIm1vZGVyYXRvciI6InRydWUifSwiZmVhdHVyZXMiOnsibGl2ZXN0cmVhbWluZyI6InRydWUiLCJyZWNvcmRpbmciOiJ0cnVlIn19LCJleHAiOjE2OTYyODQwNTIsImlzcyI6ImNoYXQiLCJuYmYiOjE1OTYxOTc2NTIsInJvb20iOiIqIiwic3ViIjoidnBhYXMtbWFnaWMtY29va2llLTBjNTIyMDRmM2I2ODQ1ZmM4NjA1NDNiMjkxYTM3MjMwLzQzOTNlMCJ9.mJ_CO07NoPRnS7ew0mAezwwGzmWE_p8oTGvYAz7kSUci-kGsXnIQJmAvwWhPtTnRvLu_HXGeuA1JtTWimMWPpkEI6plczhPenqWWsXTrnjv31mG3-HtdIRgMz0D3dzsUUmGtJWPJdjvPgIH1cHDqIJx5l9obPRjQdCChyfmKNf6KA6fuu52FaBre7gLuE2j7F_jiarwCLlJpQcMKlBi_A1lKgoFrxTradBR4vyQn4uHllDInDdfpnBKQAzVTDgO-cCT_CMje20b0itgf254VWKoXqPdo9edkXZCsv1OvDK2z6b7685Dfqq0ff3WWeADhL7plP0sr4CWpFFOZc5C9hQYOp7fAPuPogo7M4RTzPPBBWmiAQEZzX8nZzH9qbrBXGnr1RiYqiRlTpqxq1pYyD8_45qc26gBXW-5IqZjoPuTrSsZFZsELbtM39vlfjo9x1x1TtZBU_1Q7nn1rIWapp-VIhwql1xzCmm53Yyvq4THQsQ9hLxLd_KldN8CzO3_hjTCvMiBWi3E79aRRe6DPwAWTeRxjrH4Bbor3iGOsAZee46bd981Up3XtXd_xwr0_xUC1B8Rbe0pRusUK5uhD2WJvkTUN9ym1x3OPajhcqgX8eEFwXZzhv_WzUQx9h0q8inE488L-3ujH4cvHPkbQ3_Sj0yW1HgzcsRJzKuPx2LI"
             });
           }
+        </script> -->
+
+        <script type="text/javascript">
+          let api;
+        
+          const initIframeAPI = () => {
+            const domain = '8x8.vc';
+            const options = {
+              roomName: 'vpaas-magic-cookie-0c52204f3b6845fc860543b291a37230/Telepresence',
+              jwt: 'eyJraWQiOiJ2cGFhcy1tYWdpYy1jb29raWUtMGM1MjIwNGYzYjY4NDVmYzg2MDU0M2IyOTFhMzcyMzAvYjYwMmVhLVNBTVBMRV9BUFAiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJqaXRzaSIsImlzcyI6ImNoYXQiLCJpYXQiOjE2OTY2MTMzMzgsImV4cCI6MTY5NjYyMDUzOCwibmJmIjoxNjk2NjEzMzMzLCJzdWIiOiJ2cGFhcy1tYWdpYy1jb29raWUtMGM1MjIwNGYzYjY4NDVmYzg2MDU0M2IyOTFhMzcyMzAiLCJjb250ZXh0Ijp7ImZlYXR1cmVzIjp7ImxpdmVzdHJlYW1pbmciOnRydWUsIm91dGJvdW5kLWNhbGwiOnRydWUsInNpcC1vdXRib3VuZC1jYWxsIjpmYWxzZSwidHJhbnNjcmlwdGlvbiI6dHJ1ZSwicmVjb3JkaW5nIjp0cnVlfSwidXNlciI6eyJoaWRkZW4tZnJvbS1yZWNvcmRlciI6ZmFsc2UsIm1vZGVyYXRvciI6dHJ1ZSwibmFtZSI6ImNhc2V5Lmh1bnQiLCJpZCI6ImF1dGgwfDY1MTQ1NzUxOTRkZTNiZDUzZjhiZWI3OSIsImF2YXRhciI6IiIsImVtYWlsIjoiY2FzZXkuaHVudEBjb2xvcmFkby5lZHUifX0sInJvb20iOiIqIn0.TMRTpMX9WHVGRyS9aRliL65m8uNyJT3BaEEvfG4Zg-AhAILTmXtHi_AOXcKu2jo-QF9JC8HV8sx5awwW7GGN9NivWTRx6x-LCktTYYKtQtl5zr9ZUQ-BIxvMymgg9zk6WKOMnF3J6-vj-josXhhbSLCyv9OlZ_bSLKoDLEpMKLWgwZD8QeVrCsnnDfjN7Cwyff4SrGOz9_2BtVNkfQluEh2kvoyEqW3VUWC-l_mYyzK4rHCwVW0kn3aytxrbQr3ktMxRlU73BIFL_Ch9pqepemzwTuhaiHi9DOYaQw6nUnItreuht_r2xArodVpddPPFi50HoWOjTiJAE_7v8hHZLQ',
+              width: 1000,
+              height: 1000,
+              parentNode: document.querySelector('#meet')
+            };
+            api = new JitsiMeetExternalAPI(domain, options);
+          }
+        
+          window.onload = () => {
+            initIframeAPI();
+          }
         </script>
+
 
   <!-- Webapp settings -->
   <meta name="apple-mobile-web-app-capable" content="yes">
