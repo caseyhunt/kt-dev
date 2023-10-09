@@ -3,7 +3,8 @@
 <head>
   <title>Toio Canvas Clicker</title>
 
-  <script src='https://8x8.vc/external_api.js'></script>
+  <!-- <script src='https://8x8.vc/external_api.js'></script> -->
+  <script src='https://8x8.vc/libs/external_api.min.js'></script>
 
   <!-- <script src='https://8x8.vc/vpaas-magic-cookie-0c52204f3b6845fc860543b291a37230/external_api.js' async></script>
         <style>html, body, #jaas-container { height: 300%; }</style>
@@ -26,7 +27,7 @@
             const domain = '8x8.vc';
             const options = {
               roomName: 'vpaas-magic-cookie-0c52204f3b6845fc860543b291a37230/Telepresence',
-              jwt: 'eyJraWQiOiJ2cGFhcy1tYWdpYy1jb29raWUtMGM1MjIwNGYzYjY4NDVmYzg2MDU0M2IyOTFhMzcyMzAvYjYwMmVhLVNBTVBMRV9BUFAiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJqaXRzaSIsImlzcyI6ImNoYXQiLCJpYXQiOjE2OTY2MTMzMzgsImV4cCI6MTY5NjYyMDUzOCwibmJmIjoxNjk2NjEzMzMzLCJzdWIiOiJ2cGFhcy1tYWdpYy1jb29raWUtMGM1MjIwNGYzYjY4NDVmYzg2MDU0M2IyOTFhMzcyMzAiLCJjb250ZXh0Ijp7ImZlYXR1cmVzIjp7ImxpdmVzdHJlYW1pbmciOnRydWUsIm91dGJvdW5kLWNhbGwiOnRydWUsInNpcC1vdXRib3VuZC1jYWxsIjpmYWxzZSwidHJhbnNjcmlwdGlvbiI6dHJ1ZSwicmVjb3JkaW5nIjp0cnVlfSwidXNlciI6eyJoaWRkZW4tZnJvbS1yZWNvcmRlciI6ZmFsc2UsIm1vZGVyYXRvciI6dHJ1ZSwibmFtZSI6ImNhc2V5Lmh1bnQiLCJpZCI6ImF1dGgwfDY1MTQ1NzUxOTRkZTNiZDUzZjhiZWI3OSIsImF2YXRhciI6IiIsImVtYWlsIjoiY2FzZXkuaHVudEBjb2xvcmFkby5lZHUifX0sInJvb20iOiIqIn0.TMRTpMX9WHVGRyS9aRliL65m8uNyJT3BaEEvfG4Zg-AhAILTmXtHi_AOXcKu2jo-QF9JC8HV8sx5awwW7GGN9NivWTRx6x-LCktTYYKtQtl5zr9ZUQ-BIxvMymgg9zk6WKOMnF3J6-vj-josXhhbSLCyv9OlZ_bSLKoDLEpMKLWgwZD8QeVrCsnnDfjN7Cwyff4SrGOz9_2BtVNkfQluEh2kvoyEqW3VUWC-l_mYyzK4rHCwVW0kn3aytxrbQr3ktMxRlU73BIFL_Ch9pqepemzwTuhaiHi9DOYaQw6nUnItreuht_r2xArodVpddPPFi50HoWOjTiJAE_7v8hHZLQ',
+              // jwt: 'eyJhbGciOiJSUzI1NiIsImtpZCI6InZwYWFzLW1hZ2ljLWNvb2tpZS0wYzUyMjA0ZjNiNjg0NWZjODYwNTQzYjI5MWEzNzIzMC80MzkzZTAiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJqaXRzaSIsImNvbnRleHQiOnsidXNlciI6eyJpZCI6IjBmOGI3NzYwLWMxN2YtNGExMi1iMTM0LWM2YWMzNzE2NzE0NCIsIm5hbWUiOiJDYXNleSIsImF2YXRhciI6Imh0dHBzOi8vbGluay50by91c2VyL2F2YXRhci9waWN0dXJlIiwiZW1haWwiOiIgY2FzZXkuaHVudEBjb2xvcmFkby5lZHUiLCJtb2RlcmF0b3IiOiJ0cnVlIn0sImZlYXR1cmVzIjp7ImxpdmVzdHJlYW1pbmciOiJ0cnVlIiwicmVjb3JkaW5nIjoidHJ1ZSJ9fSwiZXhwIjoxNjk2Mjg0MDUyLCJpc3MiOiJjaGF0IiwibmJmIjoxNTk2MTk3NjUyLCJyb29tIjoiKiIsInN1YiI6InZwYWFzLW1hZ2ljLWNvb2tpZS0wYzUyMjA0ZjNiNjg0NWZjODYwNTQzYjI5MWEzNzIzMCJ9.eURYRUtTGaFHGo39HWrYTJKiAJf73cvnllnXnc3r4qvU9Go77Ug3qw_fOcrHtybFrYa_J1iuNzkYo_6pJbVhYuU7zLq08QGz7IcVi0ls2r1Xlmqr6caNcsvCLYnyOk4vUVEhWnNltn_9rTdtDNHb6e-EYLCYMEVGDRUXzcU5CR03NNRXluYWBCnAGhnYZK3xJHQuMQDzSU7YORd2v6D-kriFPU8LTHi1v0sCeiGg13SDwm7JCOGuNkrD1Ah6HXOCd2CEZWdSXXW88tuYY4PIiKI_svtMj-U5QmFdgVR_OOwes5-GAg00Ul5qrZq_c9n3mIrp9iEFo7BEXQY7QtnxOuMZKLFkKFs0KkUGENbtU30wYE6jov912eXSYdzaPcHPHEPV6ew7REdzpU4A9isNLfvhPECNSUJ5Lmq17apLEVSkOvjYu44aXJYq2s3DDU_R5JOKRgAO1tMRJg4rq4EzXDcwKVMhyQiS4mTzH_X5GpOXPIlayiIAbojKRD3BO4jTd0SZnkWhjt7oNxkSoQOxmY3Yzvc0sNNriw89_Dt0iRPRqRsW-jaNHPypZqAd1h5a1msDQZmf22iZ0b-ykO6aDzUGmxOaDE87Y5I71lKaoNU_GEISTql09f8EgNR3QW0bmiyQTvvXb56qnWbFuGRNUn3JA65NXTurrpebUa1vU1U',
               width: 1000,
               height: 1000,
               parentNode: document.querySelector('#meet')
