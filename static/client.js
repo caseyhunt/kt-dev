@@ -76,7 +76,7 @@ initIframeAPI = () => {
 const domain = "8x8.vc";
 
 const options = {
- roomName: "vpaas-magic-cookie-0c52204f3b6845fc860543b291a37230/New Verz",
+ roomName: "vpaas-magic-cookie-0c52204f3b6845fc860543b291a37230/Together Apart",
  // jwt: 'eyJhbGciOiJSUzI1NiIsImtpZCI6InZwYWFzLW1hZ2ljLWNvb2tpZS0wYzUyMjA0ZjNiNjg0NWZjODYwNTQzYjI5MWEzNzIzMC80MzkzZTAiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJqaXRzaSIsImNvbnRleHQiOnsidXNlciI6eyJpZCI6IjBmOGI3NzYwLWMxN2YtNGExMi1iMTM0LWM2YWMzNzE2NzE0NCIsIm5hbWUiOiJDYXNleSIsImF2YXRhciI6Imh0dHBzOi8vbGluay50by91c2VyL2F2YXRhci9waWN0dXJlIiwiZW1haWwiOiIgY2FzZXkuaHVudEBjb2xvcmFkby5lZHUiLCJtb2RlcmF0b3IiOiJ0cnVlIn0sImZlYXR1cmVzIjp7ImxpdmVzdHJlYW1pbmciOiJ0cnVlIiwicmVjb3JkaW5nIjoidHJ1ZSJ9fSwiZXhwIjoxNjk2Mjg0MDUyLCJpc3MiOiJjaGF0IiwibmJmIjoxNTk2MTk3NjUyLCJyb29tIjoiKiIsInN1YiI6InZwYWFzLW1hZ2ljLWNvb2tpZS0wYzUyMjA0ZjNiNjg0NWZjODYwNTQzYjI5MWEzNzIzMCJ9.eURYRUtTGaFHGo39HWrYTJKiAJf73cvnllnXnc3r4qvU9Go77Ug3qw_fOcrHtybFrYa_J1iuNzkYo_6pJbVhYuU7zLq08QGz7IcVi0ls2r1Xlmqr6caNcsvCLYnyOk4vUVEhWnNltn_9rTdtDNHb6e-EYLCYMEVGDRUXzcU5CR03NNRXluYWBCnAGhnYZK3xJHQuMQDzSU7YORd2v6D-kriFPU8LTHi1v0sCeiGg13SDwm7JCOGuNkrD1Ah6HXOCd2CEZWdSXXW88tuYY4PIiKI_svtMj-U5QmFdgVR_OOwes5-GAg00Ul5qrZq_c9n3mIrp9iEFo7BEXQY7QtnxOuMZKLFkKFs0KkUGENbtU30wYE6jov912eXSYdzaPcHPHEPV6ew7REdzpU4A9isNLfvhPECNSUJ5Lmq17apLEVSkOvjYu44aXJYq2s3DDU_R5JOKRgAO1tMRJg4rq4EzXDcwKVMhyQiS4mTzH_X5GpOXPIlayiIAbojKRD3BO4jTd0SZnkWhjt7oNxkSoQOxmY3Yzvc0sNNriw89_Dt0iRPRqRsW-jaNHPypZqAd1h5a1msDQZmf22iZ0b-ykO6aDzUGmxOaDE87Y5I71lKaoNU_GEISTql09f8EgNR3QW0bmiyQTvvXb56qnWbFuGRNUn3JA65NXTurrpebUa1vU1U',
 
  parentNode: document.querySelector('#meet')
@@ -88,26 +88,28 @@ api = new JitsiMeetExternalAPI(domain, options);
 
 window.onload = () => {
 initIframeAPI();
+
+api.addListener("videoConferenceJoined", function(res)
+{
+  console.log('participant joined');
+  console.log(res.displayName);
+  name = res.displayName;
+  socket.emit('namesubmit',  name);
+  //socket.emit('emoji', emoji);
+  for(let i=0; i < document.getElementsByClassName("controls").length; i++){
+  document.getElementsByClassName("controls")[i].style.visibility = "visible";
+}
+  resizeMeeting();
+
+}
+);
 }
 
   
  
 
 
-// api.addListener("videoConferenceJoined", function(res)
-// {
-//   console.log('participant joined');
-//   console.log(res.displayName);
-//   name = res.displayName;
-//   socket.emit('namesubmit',  name);
-//   //socket.emit('emoji', emoji);
-//   for(let i=0; i < document.getElementsByClassName("controls").length; i++){
-//   document.getElementsByClassName("controls")[i].style.visibility = "visible";
-// }
-//   resizeMeeting();
 
-// }
-// );
 
 const resizeMeeting = () => {
   document.getElementById("meet").style.minHeight = "0px";
