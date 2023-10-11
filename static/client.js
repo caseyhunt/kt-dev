@@ -70,9 +70,9 @@ let cubecc = undefined;
 
 
      
-
+let api;
 initIframeAPI = () => {
- let api; 
+//  let api; 
 const domain = "8x8.vc";
 
 const options = {
@@ -85,6 +85,7 @@ api = new JitsiMeetExternalAPI(domain, options);
 // api.getParticipantsInfo();
 // const numberOfParticipants = api.getNumberOfParticipants();
 }   
+
 window.onload = () => {
 initIframeAPI();
 }
@@ -93,20 +94,20 @@ initIframeAPI();
  
 
 
-api.addListener("videoConferenceJoined", function(res)
-{
-  console.log('participant joined');
-  console.log(res.displayName);
-  name = res.displayName;
-  socket.emit('namesubmit',  name);
-  //socket.emit('emoji', emoji);
-  for(let i=0; i < document.getElementsByClassName("controls").length; i++){
-  document.getElementsByClassName("controls")[i].style.visibility = "visible";
-}
-  resizeMeeting();
+// api.addListener("videoConferenceJoined", function(res)
+// {
+//   console.log('participant joined');
+//   console.log(res.displayName);
+//   name = res.displayName;
+//   socket.emit('namesubmit',  name);
+//   //socket.emit('emoji', emoji);
+//   for(let i=0; i < document.getElementsByClassName("controls").length; i++){
+//   document.getElementsByClassName("controls")[i].style.visibility = "visible";
+// }
+//   resizeMeeting();
 
-}
-);
+// }
+// );
 
 const resizeMeeting = () => {
   document.getElementById("meet").style.minHeight = "0px";
@@ -1710,7 +1711,7 @@ function collapseVideo(){
     document.getElementById("meet").style.height = "48vh";
     console.log("small window");
   }else{
-  document.getElementById("arrow").style.marginTop = "-9px";
+  document.getElementById("arrow").style.marginTop = "-2px";
   document.getElementById("meet").style.height = "50vh";
   }
   document.querySelector(".controls").style.display = "flex";
