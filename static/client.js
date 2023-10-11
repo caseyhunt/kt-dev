@@ -70,14 +70,25 @@ let cubecc = undefined;
 
 
      
-     window.onload = () => {
-         const api = new JitsiMeetExternalAPI('8x8.vc', {
-         roomName: "vpaas-magic-cookie-0c52204f3b6845fc860543b291a37230/New Verz",
-         parentNode: document.querySelector('#meet'),
-         // jwt: "eyJraWQiOiJ2cGFhcy1tYWdpYy1jb29raWUtMGM1MjIwNGYzYjY4NDVmYzg2MDU0M2IyOTFhMzcyMzAvYjYwMmVhLVNBTVBMRV9BUFAiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJqaXRzaSIsImlzcyI6ImNoYXQiLCJpYXQiOjE2OTY0MzMxNTUsImV4cCI6MTY5NjQ0MDM1NSwibmJmIjoxNjk2NDMzMTUwLCJzdWIiOiJ2cGFhcy1tYWdpYy1jb29raWUtMGM1MjIwNGYzYjY4NDVmYzg2MDU0M2IyOTFhMzcyMzAiLCJjb250ZXh0Ijp7ImZlYXR1cmVzIjp7ImxpdmVzdHJlYW1pbmciOmZhbHNlLCJvdXRib3VuZC1jYWxsIjpmYWxzZSwic2lwLW91dGJvdW5kLWNhbGwiOmZhbHNlLCJ0cmFuc2NyaXB0aW9uIjpmYWxzZSwicmVjb3JkaW5nIjpmYWxzZX0sInVzZXIiOnsiaGlkZGVuLWZyb20tcmVjb3JkZXIiOmZhbHNlLCJtb2RlcmF0b3IiOnRydWUsIm5hbWUiOiJUZXN0IFVzZXIiLCJpZCI6ImF1dGgwfDY1MTQ1NzUxOTRkZTNiZDUzZjhiZWI3OSIsImF2YXRhciI6IiIsImVtYWlsIjoidGVzdC51c2VyQGNvbXBhbnkuY29tIn19LCJyb29tIjoiKiJ9.XnNX4CaMKgV7UYAkTQlVaqiFCCNR4M_eBwP2dzIXfYs8WokIEjXs22aFB9el5vSpOug_bzpUrO-MKwlUuJHX2ya0Hxlv5OBwDu6KE3UugDj0OkPioMAaRpALKJlPWwQ_AApzjXkNxii6nSA-hF_zs7ONFllOfsOLqTeKI6ko_wNySOg-CoKU1hzHmXOMCdUuP826rE-LwhzJ4_TzrK9hWt_ASWhCcHZocEqICgyQq6AZD_ZCpJZYIb3xVxsJVoHDDIu-VBLM7IdsWIlw5wh9CzFjFm4YbrYwUnTYDArKZpfQE3EAoK6c9wKJe3Ijmo5cWZyahjUDEu0xRFJTQaYugQ",
- 
-       });
-     }
+
+initIframeAPI = () => {
+ let api; 
+const domain = "8x8.vc";
+
+const options = {
+ roomName: "vpaas-magic-cookie-0c52204f3b6845fc860543b291a37230/New Verz",
+ // jwt: 'eyJhbGciOiJSUzI1NiIsImtpZCI6InZwYWFzLW1hZ2ljLWNvb2tpZS0wYzUyMjA0ZjNiNjg0NWZjODYwNTQzYjI5MWEzNzIzMC80MzkzZTAiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJqaXRzaSIsImNvbnRleHQiOnsidXNlciI6eyJpZCI6IjBmOGI3NzYwLWMxN2YtNGExMi1iMTM0LWM2YWMzNzE2NzE0NCIsIm5hbWUiOiJDYXNleSIsImF2YXRhciI6Imh0dHBzOi8vbGluay50by91c2VyL2F2YXRhci9waWN0dXJlIiwiZW1haWwiOiIgY2FzZXkuaHVudEBjb2xvcmFkby5lZHUiLCJtb2RlcmF0b3IiOiJ0cnVlIn0sImZlYXR1cmVzIjp7ImxpdmVzdHJlYW1pbmciOiJ0cnVlIiwicmVjb3JkaW5nIjoidHJ1ZSJ9fSwiZXhwIjoxNjk2Mjg0MDUyLCJpc3MiOiJjaGF0IiwibmJmIjoxNTk2MTk3NjUyLCJyb29tIjoiKiIsInN1YiI6InZwYWFzLW1hZ2ljLWNvb2tpZS0wYzUyMjA0ZjNiNjg0NWZjODYwNTQzYjI5MWEzNzIzMCJ9.eURYRUtTGaFHGo39HWrYTJKiAJf73cvnllnXnc3r4qvU9Go77Ug3qw_fOcrHtybFrYa_J1iuNzkYo_6pJbVhYuU7zLq08QGz7IcVi0ls2r1Xlmqr6caNcsvCLYnyOk4vUVEhWnNltn_9rTdtDNHb6e-EYLCYMEVGDRUXzcU5CR03NNRXluYWBCnAGhnYZK3xJHQuMQDzSU7YORd2v6D-kriFPU8LTHi1v0sCeiGg13SDwm7JCOGuNkrD1Ah6HXOCd2CEZWdSXXW88tuYY4PIiKI_svtMj-U5QmFdgVR_OOwes5-GAg00Ul5qrZq_c9n3mIrp9iEFo7BEXQY7QtnxOuMZKLFkKFs0KkUGENbtU30wYE6jov912eXSYdzaPcHPHEPV6ew7REdzpU4A9isNLfvhPECNSUJ5Lmq17apLEVSkOvjYu44aXJYq2s3DDU_R5JOKRgAO1tMRJg4rq4EzXDcwKVMhyQiS4mTzH_X5GpOXPIlayiIAbojKRD3BO4jTd0SZnkWhjt7oNxkSoQOxmY3Yzvc0sNNriw89_Dt0iRPRqRsW-jaNHPypZqAd1h5a1msDQZmf22iZ0b-ykO6aDzUGmxOaDE87Y5I71lKaoNU_GEISTql09f8EgNR3QW0bmiyQTvvXb56qnWbFuGRNUn3JA65NXTurrpebUa1vU1U',
+
+ parentNode: document.querySelector('#meet')
+};
+api = new JitsiMeetExternalAPI(domain, options);
+// api.getParticipantsInfo();
+// const numberOfParticipants = api.getNumberOfParticipants();
+}   
+window.onload = () => {
+initIframeAPI();
+}
+
   
  
 
